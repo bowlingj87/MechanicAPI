@@ -16,6 +16,10 @@
 │		│				├──__init__.py  - Initializt User Blueprint
 │		│				├── routes.py  - Create User Controllers/routes
 │		│				└── schemas.py
+        │
+        │--/utils
+            │---util.py 
+
 │   └── models.py
 ├── app.py
 └── config.py

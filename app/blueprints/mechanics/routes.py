@@ -63,3 +63,30 @@ def delete_mechanic(mechanic_id):
     db.session.delete(mechanic)
     db.session.commit()
     return jsonify({"message": f'Mechanic id: {mechanic_id}, successfully deleted.'}), 200
+
+#Get specific mechanic
+@mechanics_bp.route("/<int:mechanic_id>", methods=["GET"])
+def get_mechanic(mechanic_id):
+    mechanic = db.session.get(Mechanic, mechanic_id)
+
+    if mechanic:
+          return mechanic_schema.jsonify(mechanic), 200
+    return jsonify({"error": "Mechanic not found"}), 404
+
+@mechanics_bp.route("/popular", methods=["GET"])
+def popular_mechanics():
+    query = select(Mechanic)
+    mechanics = db.session.execute(query).scalars().all()
+
+    mechanics.sort(key = lambda mechanic: len(mechanic.service_tickets), reverse=True)
+    
+    return mechanics_schema.jsonify(mechanics)
+
+@mechanics_bp.route("/search", methods=["GET"])
+def search_mechanics():
+    name = request.args.get("name")
+    
+    query = select(Mechanic).where(Mechanic.name.like(f'%{name}%'))
+    mechanics = db.session.execute(query).scalars().all()
+
+    return mechanics_schema.jsonify(mechanics)
