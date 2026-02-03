@@ -18,7 +18,8 @@ app/
 │
 ├── blueprints/
 │   ├── customers/
-│   ├── mechanics/
+│   ├── inventories/
+│ 	 ├── mechanic/
 │   └── service_tickets/
 │
 ├── __init__.py
@@ -39,19 +40,24 @@ README.txt
 Customer - id (Primary Key) - name - email (unique) - phone -
 One-to-many relationship with Service Tickets
 
+Inventory - id(Primary) - name - price - Many-to-many relationship
+with Service Tickets
+
 Mechanic - id (Primary Key) - name - email - phone - Many-to-many
 relationship with Service Tickets
 
 Service Ticket - id (Primary Key) - service_date - service_description -
 vin - customer_id (Foreign Key) - Many-to-many relationship with
-Mechanics
+Mechanics and Inventory
 
   --------------------------------------------------
   Relationships
   --------------------------------------------------
   - One Customer can have many Service Tickets - One
   Service Ticket can be assigned to many Mechanics -
-  One Mechanic can work on many Service Tickets
+  One Mechanic can work on many Service Tickets, One 
+  Service Ticket can have many inventory parts attached,
+  One inventory part can be assigned to many service tickets
 
   --------------------------------------------------
 
@@ -73,6 +79,21 @@ PUT /customers/<int:customer_id>/
 
 Delete Specific Customer
 DELETE /customers/<int:customer_id>/
+
+Inventory Endpoints
+
+Create A New Inventory part
+POST /inventories/
+
+Retrieve all Inventory
+GET /inventories/
+
+Update a specific Inventory
+PUT /inventories/<int:inventory_id>/
+
+Delete Specific inventory
+DELETE /inventories/<int:inventory_id>/
+
 
 
 Mechanics Endpoints
@@ -99,12 +120,17 @@ POST /service_tickets/
 Retrieve all service tickets
 GET /service_tickets/
 
-
-PUT /<int:service_tickets_id>/assign_mechanic/<int:mechanic_id>
 Assign a mechanic to a service ticket
+PUT /service_tickets<int:service_tickets_id>/assign_mechanic/<int:mechanic_id>
 
-PUT /<int:service_tickets_id>/remove_mechanic/<int:mechanic_id>
 Remove a mechanic from a service ticket
+PUT /service_tickets/<int:service_tickets_id>/remove_mechanic/<int:mechanic_id>
+
+Get Specific service ticket
+GET/service_tickets/<int:ticket_id>
+
+Add Inventory item to service ticket
+PUT /service_tickets/<int:ticket_id>/add_inventory/<int:inventory_id>
 
 
 How to Run the Application
