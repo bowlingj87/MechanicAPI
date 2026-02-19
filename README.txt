@@ -18,7 +18,12 @@ app/
 │
 ├── blueprints/
 │   ├── customers/
+<<<<<<< HEAD
 │   ├── mechanics/
+=======
+│   ├── inventories/
+│ 	 ├── mechanic/
+>>>>>>> 3258edba17cb3d93ef8e2689da65fb7cfe696928
 │   └── service_tickets/
 │
 ├── __init__.py
@@ -39,19 +44,35 @@ README.txt
 Customer - id (Primary Key) - name - email (unique) - phone -
 One-to-many relationship with Service Tickets
 
+<<<<<<< HEAD
+=======
+Inventory - id(Primary) - name - price - Many-to-many relationship
+with Service Tickets
+
+>>>>>>> 3258edba17cb3d93ef8e2689da65fb7cfe696928
 Mechanic - id (Primary Key) - name - email - phone - Many-to-many
 relationship with Service Tickets
 
 Service Ticket - id (Primary Key) - service_date - service_description -
 vin - customer_id (Foreign Key) - Many-to-many relationship with
+<<<<<<< HEAD
 Mechanics
+=======
+Mechanics and Inventory
+>>>>>>> 3258edba17cb3d93ef8e2689da65fb7cfe696928
 
   --------------------------------------------------
   Relationships
   --------------------------------------------------
   - One Customer can have many Service Tickets - One
   Service Ticket can be assigned to many Mechanics -
+<<<<<<< HEAD
   One Mechanic can work on many Service Tickets
+=======
+  One Mechanic can work on many Service Tickets, One 
+  Service Ticket can have many inventory parts attached,
+  One inventory part can be assigned to many service tickets
+>>>>>>> 3258edba17cb3d93ef8e2689da65fb7cfe696928
 
   --------------------------------------------------
 
@@ -74,6 +95,24 @@ PUT /customers/<int:customer_id>/
 Delete Specific Customer
 DELETE /customers/<int:customer_id>/
 
+<<<<<<< HEAD
+=======
+Inventory Endpoints
+
+Create A New Inventory part
+POST /inventories/
+
+Retrieve all Inventory
+GET /inventories/
+
+Update a specific Inventory
+PUT /inventories/<int:inventory_id>/
+
+Delete Specific inventory
+DELETE /inventories/<int:inventory_id>/
+
+
+>>>>>>> 3258edba17cb3d93ef8e2689da65fb7cfe696928
 
 Mechanics Endpoints
 
@@ -99,12 +138,26 @@ POST /service_tickets/
 Retrieve all service tickets
 GET /service_tickets/
 
+<<<<<<< HEAD
 
 PUT /<int:service_tickets_id>/assign_mechanic/<int:mechanic_id>
 Assign a mechanic to a service ticket
 
 PUT /<int:service_tickets_id>/remove_mechanic/<int:mechanic_id>
 Remove a mechanic from a service ticket
+=======
+Assign a mechanic to a service ticket
+PUT /service_tickets<int:service_tickets_id>/assign_mechanic/<int:mechanic_id>
+
+Remove a mechanic from a service ticket
+PUT /service_tickets/<int:service_tickets_id>/remove_mechanic/<int:mechanic_id>
+
+Get Specific service ticket
+GET/service_tickets/<int:ticket_id>
+
+Add Inventory item to service ticket
+PUT /service_tickets/<int:ticket_id>/add_inventory/<int:inventory_id>
+>>>>>>> 3258edba17cb3d93ef8e2689da65fb7cfe696928
 
 
 How to Run the Application

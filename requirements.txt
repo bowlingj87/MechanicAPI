@@ -9,8 +9,11 @@ Flask-Caching==2.3.1
 Flask-Limiter==4.1.1
 flask-marshmallow==1.3.0
 Flask-SQLAlchemy==3.1.1
+<<<<<<< HEAD
 flask-swagger==0.2.14
 flask-swagger-ui==5.21.0
+=======
+>>>>>>> 3258edba17cb3d93ef8e2689da65fb7cfe696928
 greenlet==3.3.0
 itsdangerous==2.2.0
 Jinja2==3.1.6
@@ -24,7 +27,10 @@ packaging==26.0
 pyasn1==0.6.2
 PyJWT==2.10.1
 python-jose==3.5.0
+<<<<<<< HEAD
 PyYAML==6.0.3
+=======
+>>>>>>> 3258edba17cb3d93ef8e2689da65fb7cfe696928
 rsa==4.9.1
 six==1.17.0
 SQLAlchemy==2.0.45

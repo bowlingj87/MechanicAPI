@@ -10,6 +10,7 @@
       "name": "Customers",
       "item": [
         {
+<<<<<<< HEAD
           "name": "Create Customer",
           "request": {
             "method": "POST",
@@ -41,6 +42,8 @@
           "response": []
         },
         {
+=======
+>>>>>>> 3258edba17cb3d93ef8e2689da65fb7cfe696928
           "name": "Get All Customers",
           "request": {
             "method": "GET",
@@ -92,7 +95,11 @@
             "header": [],
             "body": {
               "mode": "raw",
+<<<<<<< HEAD
               "raw": "{\r\n    \"email\": \"juanb.bowling@gmail.com\",\r\n    \"name\": \"Juan\",\r\n    \"phone\": \"713-884-0817\"\r\n}",
+=======
+              "raw": "{\r\n    \"email\": \"juanb.bowling1234@gmail.com\",\r\n    \"name\": \"Juan\",\r\n    \"phone\": \"713-884-0817\"\r\n}",
+>>>>>>> 3258edba17cb3d93ef8e2689da65fb7cfe696928
               "options": {
                 "raw": {
                   "language": "json"
@@ -139,6 +146,108 @@
             }
           },
           "response": []
+<<<<<<< HEAD
+=======
+        },
+        {
+          "name": "Create Customer",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "  {\r\n        \"email\": \"Test11@gmail.com\",\r\n         \"name\": \"Test11\",\r\n        \"phone\": \"281-999-0817\",\r\n        \"password\": \"123456\"\r\n    }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:5000/customers",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "customers"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Customer Login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"Test2@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:5000/customers/login",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "customers",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete customer after login",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzAxNjQ1ODgsImlhdCI6MTc3MDE2MDk4OCwic3ViIjoiOSJ9.z4Q3DKgeODgO1WMq6XkssQdzXpctXrabqhX2mSRGjtI",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "  {\r\n        \"email\": \"bowling@yahoo.com\",\r\n         \"name\": \"Bowling\",\r\n        \"phone\": \"251-884-5555\"\r\n    }"
+            },
+            "url": {
+              "raw": "http://127.0.0.1:5000/customers",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "customers"
+              ]
+            }
+          },
+          "response": []
+>>>>>>> 3258edba17cb3d93ef8e2689da65fb7cfe696928
         }
       ]
     },
@@ -152,7 +261,11 @@
             "header": [],
             "body": {
               "mode": "raw",
+<<<<<<< HEAD
               "raw": "{\r\n     \"email\": \"mc4@email.com\",\r\n    \"name\": \"Mechanic Four\",\r\n    \"phone\": \"713-884-1111\"\r\n}",
+=======
+              "raw": "{\r\n     \"email\": \"Yessie@gmail.com\",\r\n    \"name\": \"Yessie\",\r\n    \"phone\": \"713-884-1111\"\r\n}",
+>>>>>>> 3258edba17cb3d93ef8e2689da65fb7cfe696928
               "options": {
                 "raw": {
                   "language": "json"
@@ -252,6 +365,91 @@
             }
           },
           "response": []
+<<<<<<< HEAD
+=======
+        },
+        {
+          "name": "Order Mechanics by busiest",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:5000/mechanics/popular",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "mechanics",
+                "popular"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Search Mechanic by name",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:5000/mechanics/search?name=j",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "mechanics",
+                "search"
+              ],
+              "query": [
+                {
+                  "key": "name",
+                  "value": "j"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Retrieve Specific Mechanic",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "  {\r\n        \"email\": \"Test@gmail.com\",\r\n         \"name\": \"Test\",\r\n        \"phone\": \"281-999-0817\",\r\n        \"password\": \"123456\"\r\n    }"
+            },
+            "url": {
+              "raw": "http://127.0.0.1:5000/mechanics/1",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "mechanics",
+                "1"
+              ]
+            }
+          },
+          "response": []
+>>>>>>> 3258edba17cb3d93ef8e2689da65fb7cfe696928
         }
       ]
     },
@@ -265,7 +463,11 @@
             "header": [],
             "body": {
               "mode": "raw",
+<<<<<<< HEAD
               "raw": "{\r\n    \"service_date\": \"2026-01-01\",\r\n    \"service_description\": \"fluids\",\r\n    \"vin\": \"ZZXXXX1234567789\",\r\n    \"customer_id\": 2\r\n    \r\n}",
+=======
+              "raw": "{\r\n    \"service_date\": \"2026-02-03\",\r\n    \"service_description\": \"Replace Tire\",\r\n    \"vin\": \"JKHFDIHVIJFP123\",\r\n    \"customer_id\": 4\r\n   \r\n    \r\n}",
+>>>>>>> 3258edba17cb3d93ef8e2689da65fb7cfe696928
               "options": {
                 "raw": {
                   "language": "json"
@@ -295,7 +497,11 @@
             "method": "PUT",
             "header": [],
             "url": {
+<<<<<<< HEAD
               "raw": "http://127.0.0.1:5000/service_tickets/1/assign_mechanic/1",
+=======
+              "raw": "http://127.0.0.1:5000/service_tickets/5/assign_mechanic/1",
+>>>>>>> 3258edba17cb3d93ef8e2689da65fb7cfe696928
               "protocol": "http",
               "host": [
                 "127",
@@ -306,7 +512,11 @@
               "port": "5000",
               "path": [
                 "service_tickets",
+<<<<<<< HEAD
                 "1",
+=======
+                "5",
+>>>>>>> 3258edba17cb3d93ef8e2689da65fb7cfe696928
                 "assign_mechanic",
                 "1"
               ]
@@ -345,7 +555,11 @@
             "method": "GET",
             "header": [],
             "url": {
+<<<<<<< HEAD
               "raw": "http://127.0.0.1:5000/service_tickets",
+=======
+              "raw": "http://127.0.0.1:5000/service_tickets/5",
+>>>>>>> 3258edba17cb3d93ef8e2689da65fb7cfe696928
               "protocol": "http",
               "host": [
                 "127",
@@ -355,7 +569,223 @@
               ],
               "port": "5000",
               "path": [
+<<<<<<< HEAD
                 "service_tickets"
+=======
+                "service_tickets",
+                "5"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Add/Remove Mechanics",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"add_mechanic_ids\": [],\r\n    \"remove_mechanic_ids\": [1]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:5000/service_tickets/8",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "service_tickets",
+                "8"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Add Part to Service Ticket",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:5000/service_tickets/5/add_inventory/5",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "service_tickets",
+                "5",
+                "add_inventory",
+                "5"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Inventory",
+      "item": [
+        {
+          "name": "Create New Inventory",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "\r\n   {\r\n    \"name\": \"Tires\",\r\n    \"price\": \"199.00\"\r\n   }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:5000/inventories",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "inventories"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Inventory",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "\r\n   {\r\n    \"name\": \"heater core\",\r\n    \"price\": \"99.00\"\r\n   }"
+            },
+            "url": {
+              "raw": "http://127.0.0.1:5000/inventories",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "inventories"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Specific Part",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "\r\n   {\r\n    \"name\": \"heater core\",\r\n    \"price\": \"99.00\"\r\n   }"
+            },
+            "url": {
+              "raw": "http://127.0.0.1:5000/inventories/1",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "inventories",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Specific Part",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "\r\n   {\r\n    \"name\": \"heater core\",\r\n    \"price\": \"89.00\"\r\n   }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:5000/inventories/1",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "inventories",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Specific part",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "\r\n   {\r\n    \"name\": \"heater core\",\r\n    \"price\": \"89.00\"\r\n   }"
+            },
+            "url": {
+              "raw": "http://127.0.0.1:5000/inventories/1",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "inventories",
+                "1"
+>>>>>>> 3258edba17cb3d93ef8e2689da65fb7cfe696928
               ]
             }
           },

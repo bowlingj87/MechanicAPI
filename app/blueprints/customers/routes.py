@@ -81,7 +81,11 @@ def get_customer(customer_id):
 
 
 #UPDATE SPECIFIC CUSTOMER
+<<<<<<< HEAD
 @customers_bp.route("/", methods=['PUT'])
+=======
+@customers_bp.route("/<int:customer_id>", methods=['PUT'])
+>>>>>>> 3258edba17cb3d93ef8e2689da65fb7cfe696928
 @token_required
 def update_customer(customer_id):
     customer = db.session.get(Customer, customer_id)
