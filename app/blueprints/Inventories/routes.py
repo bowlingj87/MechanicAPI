@@ -79,7 +79,3 @@ def delete_inventory(inventory_id):
     db.session.delete(inventory)
     db.session.commit()
     return jsonify({"message": f'Inventory item id: {inventory_id}, successfully deleted.'}), 200
-<<<<<<< HEAD
-
-=======
->>>>>>> 3258edba17cb3d93ef8e2689da65fb7cfe696928
