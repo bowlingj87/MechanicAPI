@@ -82,11 +82,7 @@ def popular_mechanics():
     
     return mechanics_schema.jsonify(mechanics)
 
-<<<<<<< HEAD
-@mechanics_bp.route("/searchs", methods=["GET"])
-=======
 @mechanics_bp.route("/search", methods=["GET"])
->>>>>>> 3258edba17cb3d93ef8e2689da65fb7cfe696928
 def search_mechanics():
     name = request.args.get("name")
     
