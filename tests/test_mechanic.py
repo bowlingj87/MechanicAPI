@@ -75,7 +75,7 @@ class TestMechanic(unittest.TestCase):
 
     # ---------------- SEARCH ----------------
     def test_search_mechanics(self):
-        response = self.client.get('/mechanics/search?name=John')
+        response = self.client.get('/mechanics/search')
         self.assertEqual(response.status_code, 200)
         self.assertTrue(len(response.json) >= 1)
         self.assertIn('John', response.json[0]['name'])
